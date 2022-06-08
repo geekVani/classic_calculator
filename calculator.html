@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .title{
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: fantasy;
+            width: 200px;
+            background: radial-gradient(rgb(146, 224, 21), pink);
+            color: rgb(7, 7, 7);
+            text-decoration: black;
+            border: solid blue 3px;
+        }
+        html{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        input[type="button"]{
+            background-color: rgb(20, 19, 19);
+            color: floralwhite;
+            border: solid black 2px;
+            width: 100%;
+            height: 100%;
+        }
+        input[type="text"]{
+            background-color: white;
+            border: thick black 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title">PASIO CALCULATOR</div>
+<table style="border: 0px;">
+    <tr>
+        <td colspan="3"><input type="text" id="result"></td>
+        <td><input type="button" value="C" onclick="clr()" style="background-color: crimson; border: solid crimson 2px;"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="display('1')"></td>
+        <td><input type="button" value="2" onclick="display('2')"></td>
+        <td><input type="button" value="3" onclick="display('3')"></td>
+        <td><input type="button" value="/" onclick="display('/')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="display('4')"></td>
+        <td><input type="button" value="5" onclick="display('5')"></td>
+        <td><input type="button" value="6" onclick="display('6')"></td>
+        <td><input type="button" value="-" onclick="display('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="display('7')"></td>
+        <td><input type="button" value="8" onclick="display('8')"></td>
+        <td><input type="button" value="9" onclick="display('9')"></td>
+        <td><input type="button" value="*" onclick="display('*')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="." onclick="display('.')"></td>
+        <td><input type="button" value="0" onclick="display('0')"></td>
+        <td><input type="button" value="=" onclick="equate()"></td>
+        <td><input type="button" value="+" onclick="display('+')"></td>
+    </tr>
+    <!-- <tr>
+        <td><input type="button" value="00" onclick="display('00')"></td>
+        <td><input type="button" value="math.sqrt" onclick="display('√')"></td>
+        <td><input type="button" value="%" onclick="display('%')"></td>
+        <td><input type="button" value="+/-" onclick="display('+/-')"></td>
+    </tr> -->
+</table>
+<script type="text/javascript">
+function clr(){
+    document.getElementById("result").value = "";
+}
+function display(val){
+    document.getElementById("result").value+=val;
+}
+function equate(){
+    let x = document.getElementById("result").value;
+    let y = eval(x);
+    document.getElementById("result").value = y;
+}
+</script>
+</body>
+</html>
